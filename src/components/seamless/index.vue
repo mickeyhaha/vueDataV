@@ -1,5 +1,5 @@
 <!--
- 描述: 新闻无缝滚动
+ 描述: 设备温度排行
  作者: Jack Chen
  日期: 2020-04-18
 -->
@@ -7,7 +7,7 @@
 <template>
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
-      <div class="sn-title">新闻无缝滚动</div> 
+      <div class="sn-title">设备温度排行</div> 
       <div class="sn-body"> 
         <div class="wrap-container">
 
@@ -129,7 +129,7 @@ export default {
         limitMoveNum: 2, // 开始无缝滚动的数据量 this.dataList.length
         hoverStop: true, // 是否开启鼠标悬停stop
         direction: 1, // 0向下 1向上 2向左 3向右
-        // autoPlay: false,
+        autoPlay: false,
         openWatch: true, // 开启数据实时监控刷新dom
         singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction => 0/1
         singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction => 2/3
@@ -151,8 +151,8 @@ export default {
 
 <style lang="scss" scoped>
 .sn-container {
-  left: 1370px;
-  top: 110px;
+  // left: 1370px;
+  // top: 110px;
   %table-style {
     width: 100%;
     height: 35px;

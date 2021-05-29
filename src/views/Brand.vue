@@ -13,7 +13,7 @@
           <span class="tem">{{ weatcherData.tem }}°C</span> 
           <span class="wea">{{ weatcherData.wea }}</span>
         </div>
-        <h2>区块链科技公司品牌概览</h2>
+        <h2>物联网平台设备运维大盘</h2>
         <div class="showTime">
           <span class="time">{{ nowTime }}</span>
           <span class="date">
@@ -26,20 +26,20 @@
       <section class="mainbox">
         <div class="item left">
           <div class="panel">
-            <h2>业务范围</h2>
+            <h2>产品品类</h2>
             <business />
             <div class="panel-footer"></div>
           </div>
           <div class="panel">
-            <h2>人才队伍</h2>
-            <talent />
-            <div class="panel-footer"></div>
-          </div>
-          <div class="panel">
-            <h2>营收状况</h2>
+            <h2>平均温度</h2>
             <income />
             <div class="panel-footer"></div>
           </div>
+          <!-- <div class="panel">
+            <h2>人才队伍</h2>
+            <talent />
+            <div class="panel-footer"></div>
+          </div> -->
         </div>
 
         <div class="item center">
@@ -47,48 +47,41 @@
             <div class="resume-hd">
               <ul>
                 <li>
-                  <countTo :startVal='startVal' :endVal='490' :duration='6000' separator=""></countTo>
+                  <countTo :startVal='startVal' :endVal='3' :duration='6000' separator=""></countTo>
                 </li>
                 <li>
-                  <countTo :startVal='startVal' :endVal='75' :duration='6000' separator=""></countTo>
-                </li>
-                <li>
-                  <countTo :startVal='startVal' :endVal='3000' :duration='6000' separator=""></countTo>
+                  <countTo :startVal='startVal' :endVal='2' :duration='6000' separator=""></countTo>
                 </li>
               </ul>
             </div>
             <div class="resume-bd">
               <ul>
-                <li>公司总人数（单位：人）</li>
-                <li>技术人员占比（单位：%）</li>
-                <li>产品投资额（单位：万元）</li>
+                <li>设备总数</li>
+                <li>设备在线</li>
               </ul>
             </div>
           </div>
           <div class="map">
             <div class="chart" id="chart_map"></div>
-            <div class="map1"></div>
-            <div class="map2"></div>
-            <div class="map3"></div>
           </div>
         </div>
 
         <div class="item right">
           <div class="panel">
+            <!-- <h2>告警</h2> -->
+            <!-- <warning /> -->
+            <div class="panel-footer"></div>
+          </div>
+          <!-- <div class="panel">
             <h2>产品热词</h2>
             <wordCloud />
             <div class="panel-footer"></div>
-          </div>
-          <div class="panel">
+          </div> -->
+          <!-- <div class="panel">
             <h2>客户分布</h2>
             <distribution />
             <div class="panel-footer"></div>
-          </div>
-          <div class="panel">
-            <h2>发展历程</h2>
-            <history />
-            <div class="panel-footer"></div>
-          </div>
+          </div> -->
         </div>
       </section>
   
@@ -105,7 +98,7 @@ import countTo from 'vue-count-to'
 export default {
   name: 'Brand',
   components: {
-    countTo
+    countTo,
   },
   data() {
   	return {
@@ -358,49 +351,49 @@ export default {
         ["北京", this.YCData]
       ].forEach((item, i) => {
         series.push(
-          {
-            name: item[0] + " Top3",
-            type: "lines",
-            zlevel: 1,
-            effect: {
-              show: true,
-              period: 6,
-              trailLength: 0.7,
-              color: "red", //arrow箭头的颜色
-              symbolSize: 3
-            },
-            lineStyle: {
-              normal: {
-                color: color[i],
-                width: 0,
-                curveness: 0.2
-              }
-            },
-            data: this.convertData(item[1])
-          },
-          {
-            name: item[0] + " Top3",
-            type: "lines",
-            zlevel: 2,
-            symbol: ["none", "arrow"],
-            symbolSize: 10,
-            effect: {
-              show: true,
-              period: 6,
-              trailLength: 0,
-              symbol: planePath,
-              symbolSize: 15
-            },
-            lineStyle: {
-              normal: {
-                color: color[i],
-                width: 1,
-                opacity: 0.6,
-                curveness: 0.2
-              }
-            },
-            data: this.convertData(item[1])
-          },
+          // {
+          //   name: item[0] + " Top3",
+          //   type: "lines",
+          //   zlevel: 1,
+          //   effect: {
+          //     show: true,
+          //     period: 6,
+          //     trailLength: 0.7,
+          //     color: "red", //arrow箭头的颜色
+          //     symbolSize: 3
+          //   },
+          //   lineStyle: {
+          //     normal: {
+          //       color: color[i],
+          //       width: 0,
+          //       curveness: 0.2
+          //     }
+          //   },
+          //   data: this.convertData(item[1])
+          // },
+          // {
+          //   name: item[0] + " Top3",
+          //   type: "lines",
+          //   zlevel: 2,
+          //   symbol: ["none", "arrow"],
+          //   symbolSize: 10,
+          //   effect: {
+          //     show: true,
+          //     period: 6,
+          //     trailLength: 0,
+          //     symbol: planePath,
+          //     symbolSize: 15
+          //   },
+          //   lineStyle: {
+          //     normal: {
+          //       color: color[i],
+          //       width: 1,
+          //       opacity: 0.6,
+          //       curveness: 0.2
+          //     }
+          //   },
+          //   data: this.convertData(item[1])
+          // },
           {
             name: item[0] + " Top3",
             type: "effectScatter",
@@ -438,6 +431,7 @@ export default {
       });
 
       let option = {
+
         tooltip: {
           trigger: "item",
           formatter: (params, ticket, callback) => {
@@ -457,6 +451,7 @@ export default {
           }
         },
         geo: {
+          center: [116.307698, 40.056975], // 中心位置坐标
           map: "china",
           label: {
             emphasis: {
@@ -464,9 +459,9 @@ export default {
               color: "#fff"
             }
           },
-          roam: false,
+          roam: true,
           //   放大我们的地图
-          zoom: 1,
+          zoom: 2,
           itemStyle: {
             normal: {
               areaColor: "rgba(43, 196, 243, 0.42)",
@@ -482,7 +477,11 @@ export default {
       }
 
       myChart.setOption(option, true);
-
+      myChart.on('click', function(params){
+        alert(params.data.name);
+        console.log(params);//此处写点击事件内容
+      });//点击事件，此事件还可以用到柱状图等其他地图
+      
       window.addEventListener("resize", () => {
         myChart.resize();
       });

@@ -36,6 +36,7 @@ import income from './companySummary/income' // 营业收入
 import wordCloud from './companySummary/wordCloud' // 产品热词
 import distribution from './companySummary/distribution' // 客户分布
 import history from './companySummary/history' // 发展历程
+import warning from './companySummary/warning'
 
 const components = {
   bgAnimation,
@@ -70,6 +71,7 @@ const components = {
   wordCloud,
   distribution,
   history,
+  warning,
   
 };
 

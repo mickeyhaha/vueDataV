@@ -1,5 +1,5 @@
 <!--
- 描述: 业务范围
+ 描述: 产品品类
  作者: Jack Chen
  日期: 2020-05-09
 -->
@@ -26,8 +26,8 @@ export default {
       // 实例化对象
       let myChart = echarts.init(document.getElementById('chart_left1'));
       let charts = { // 按顺序排列从大到小
-        cityList: ['金融行业', '电子政务', '文创版权', '教育行业', '智慧停车', '医疗互联', '物流行业'],
-        cityData: [1500, 1200, 900, 600, 400, 300, 100]
+        cityList: ['温度传感器', '井盖移位检测'],
+        cityData: [2, 1]
       }
 
       let top10CityList = charts.cityList;

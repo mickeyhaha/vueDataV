@@ -1,5 +1,5 @@
 <!--
- 描述: 营业收入
+ 描述: 平均温度
  作者: Jack Chen
  日期: 2020-05-09
 -->
@@ -25,8 +25,8 @@ export default {
     getEchartLeft3() {
       let myChart = echarts.init(document.getElementById('chart_left3'));
       let data = {
-        city: ['2015', '2016', '2017', '2018', '2019', '2020'],
-        num: ['555', '896', '1935', '2922', '4508', '5000']
+        city: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        num: ['68.3', '66.7', '65', '64.5', '66.5', '63.4']
       }
 
       let option = {
@@ -79,9 +79,9 @@ export default {
               color: '#24c4ff',
               margin: 15,
             },
-            formatter: (data) => {
-                return data.substr(2) + '年';
-            }
+            // formatter: (data) => {
+            //     return data.substr(2) + '年';
+            // }
           },
           axisTick: {
             show: false,
@@ -90,7 +90,7 @@ export default {
         }],
         yAxis: [{
           min: 0,
-          max: 6000,
+          max: 100,
           splitLine: {
             show: false,
             lineStyle: {

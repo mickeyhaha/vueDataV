@@ -13,6 +13,11 @@ import '@/assets/iconfont/iconfont.css'
 Vue.use(vueParticles)
 Vue.use(Vcomp)
 
+//引入toastui-chart: https://github.com/nhn/tui.chart/tree/main/apps/vue-chart
+import '@toast-ui/chart/dist/toastui-chart.min.css';
+import { barChart } from '@toast-ui/vue-chart';
+// Vue.use(barChart)  
+
 Vue.config.productionTip = false
 
 Vue.prototype.$Toast = Toast
